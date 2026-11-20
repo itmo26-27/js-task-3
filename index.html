@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ru">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ну, погоди! · Электроника ИМ-02</title>
+<link rel="stylesheet" href="style.css">
+<main>
+  <section class="console" aria-label="Карманная игра Электроника ИМ-02">
+    <div class="face">
+      <span class="monogram" aria-hidden="true">ИМ</span>
+      <div class="frame">
+        <h1>Ну, погоди!</h1>
+        <div class="rim"><div class="glass">
+          <canvas id="scene" width="960" height="624" role="img" aria-label="Игровое поле"></canvas>
+        </div></div>
+        <strong class="model">Электроника ИМ 02</strong>
+      </div>
+      <div class="modes" aria-label="Режимы прибора">
+        <button type="button" id="game-a" title="Играть вручную · Разминка"><i></i>игра А</button>
+        <button type="button" id="game-b" title="Играть вручную · Смена корзин"><i></i>игра Б</button>
+        <button type="button" id="time-mode" title="Показать часы"><i></i>время</button>
+      </div>
+      <div class="pad left">
+        <button data-basket="topLeft" aria-label="Корзина слева сверху"></button>
+        <button data-basket="bottomLeft" aria-label="Корзина слева снизу"></button>
+      </div>
+      <div class="pad right">
+        <button data-basket="topRight" aria-label="Корзина справа сверху"></button>
+        <button data-basket="bottomRight" aria-label="Корзина справа снизу"></button>
+      </div>
+    </div>
+  </section>
+  <form id="controls">
+    <label>Учебный раунд <select id="round"></select></label>
+    <div class="actions"><button id="demo" type="button">Смотреть демо</button><button id="run" type="submit">Запустить</button></div>
+  </form>
+  <div class="stats"><output id="score"></output><span id="clock"></span><span class="readiness"><span id="key-state"></span><progress id="recharge" max="400" value="400" aria-label="Готовность кнопок"></progress></span></div>
+  <p id="status" role="status"></p>
+  <details id="journal"><summary>Журнал раунда</summary><ol id="log"></ol></details>
+</main>
+<script src="controller.js"></script><script src="scene.js"></script><script src="game.js"></script>
+</html>
